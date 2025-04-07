@@ -1,0 +1,9 @@
+services:
+  mayo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mayo
+    container_name: mayo
+
+  
