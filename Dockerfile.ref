@@ -14,14 +14,8 @@ RUN mkdir -p /mayo/build
 COPY . /mayo
 WORKDIR /mayo/build
 
-RUN mkdir ref \
-&&  cd ref \
-&&  cmake -DMAYO_BUILD_TYPE=ref -DENABLE_AESNI=ON ../../CMakeLists.txt \
-&&  make
-
-RUN mkdir avx2 \
-&&  cd avx2 \
-&&  cmake -DMAYO_BUILD_TYPE=avx2 -DENABLE_AESNI=ON ../../CMakeLists.txt \
+# ref
+RUN  cmake -DMAYO_BUILD_TYPE=ref -DENABLE_AESNI=OFF .. \
 &&  make
 
 CMD ["tail", "-f", "/dev/null"]

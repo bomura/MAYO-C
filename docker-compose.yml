@@ -1,9 +1,15 @@
 services:
-  mayo:
+  mayo-ref:
     build:
       context: .
-      dockerfile: Dockerfile
-    image: mayo
-    container_name: mayo
+      dockerfile: Dockerfile.ref
+    image: mayo-ref
+    container_name: mayo-ref
+  mayo-avx2:
+    build:
+      context: .
+      dockerfile: Dockerfile.avx2
+    image: mayo-avx2
+    container_name: mayo-avx2
 
   
